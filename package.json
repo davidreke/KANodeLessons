@@ -1,0 +1,27 @@
+{
+  "name": "kanodelessons",
+  "version": "1.0.0",
+  "description": "\"learning Node\"",
+  "main": "files.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/davidreke/KANodeLessons.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/davidreke/KANodeLessons/issues"
+  },
+  "homepage": "https://github.com/davidreke/KANodeLessons#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "lodash": "^4.17.19"
+  }
+}

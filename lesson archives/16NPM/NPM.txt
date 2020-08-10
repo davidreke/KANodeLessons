@@ -1,0 +1,6 @@
+1. Show students https://www.npmjs.com/
+
+This is everything outside of the node core. There are 1000s of packages. We used this to install React and axios.
+
+Lets look at React and axios
+

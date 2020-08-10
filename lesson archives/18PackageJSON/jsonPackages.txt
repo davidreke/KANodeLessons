@@ -1,0 +1,18 @@
+1. packages.json keeps track of all the packages and details we need for our packages
+
+2. npm init 
+then go through default values
+
+3. packages-lock.json is something we don't need to edit. It keeps track of dependency versions
+
+4. packages.json keeps track of everything we need to know about our project. Most importantly it takes track of all the dependencies we've installed with NPM
+
+5. install lodash
+https://www.npmjs.com/package/lodash
+https://lodash.com/
+$ npm i --save lodash
+
+the --save saves it to our local dependancies for our project
+check the package.json to see the added dependency
+
+6. now go to server.js

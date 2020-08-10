@@ -1,0 +1,3 @@
+1. If I wanted to send my code to someone else, I wouldn't want to send all my modules, that would be yuuuuge.
+2. If I deleted my modules, I couldn't run lodash inside the server.js file
+3. delete your modules folder and then run npm install

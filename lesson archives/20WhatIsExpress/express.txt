@@ -1,0 +1,6 @@
+1. Express is a fraemwork that allows us to manage our routing, requests, server logic, and responses in a more organized and elegant way. Functionally its the same as what we've already done with node, just easier.
+
+https://www.npmjs.com/package/express
+
+2. npm install express
+
