@@ -1,27 +1,37 @@
-
 const express = require('express');
-const { Server } = require('http');
-
-
+// 1. npm install ejs
+// 1... check packages.json
 const app = express();
+
+// 2. register EJS as view engine using app.set
+// because we have a views folder we don't need to tell ejs that our views are in the views folder. However, if we used a different folder name, we would have to configure that.
+app.set('view engine', 'ejs');
+// 3. create an index.ejs in views
+
 
 app.listen(3000);
 
-
 app.get('/', (req, res) =>{
-
-    // res.send('<p>homepage</p>')
-    res.sendFile('./views/index.html', { root: __dirname});
-    // the path is not meant to be a relative path, by default it looks for an absolute value. WE have to use a second parameter that is an object that sets a new root directory that is this directory's name
-
+    // 5. replace the senFile method with the render method
+    res.render('index');
+    // 6. Create about.ejs
 })
 
-// 1. add another get request
-
 app.get("/about", (req, res) => {
-//   res.send("<p>about</p>");
-  res.sendFile("./views/about.html", { root: __dirname });
+    // 10. replace the rest of our sendFile()s with render methods
+  res.render('about')
 });
 
-// 2. how could we send html files instead of p tags?
-// 2... replace the p tags with sendFile.
+// 11. remove the redirect
+// 12. add a get method for the create.ejs file
+// 13. create the create.ejs file
+app.get('/blogs/create' , (req, res) => {
+    res.render('create');
+})
+
+
+app.use((req, res) => {
+    // 10...
+    res.status(404).render('404')
+
+})

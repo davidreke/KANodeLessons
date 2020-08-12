@@ -1,0 +1,3 @@
+What if we want to inject dynamic data into an html file. For example, what if we want to use a database?
+
+View engines help us with that, and express is pretty great for it. We need an additional package to run the view engine, and we are going to use EJS.
