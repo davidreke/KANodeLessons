@@ -1,37 +1,35 @@
 const express = require('express');
-// 1. npm install ejs
-// 1... check packages.json
 const app = express();
 
-// 2. register EJS as view engine using app.set
-// because we have a views folder we don't need to tell ejs that our views are in the views folder. However, if we used a different folder name, we would have to configure that.
 app.set('view engine', 'ejs');
-// 3. create an index.ejs in views
+
 
 
 app.listen(3000);
 
 app.get('/', (req, res) =>{
-    // 5. replace the senFile method with the render method
-    res.render('index');
-    // 6. Create about.ejs
+    // 4. add an object as a second paramater that will be passed into the index.ejs file
+    res.render('index', {title: "Home"});
 })
 
+// 6. add titles to about and create and 404
+// 7. add those titles to your ejs pages and reload your localhost
 app.get("/about", (req, res) => {
-    // 10. replace the rest of our sendFile()s with render methods
-  res.render('about')
+    // 8 copy and paste in this blogs value
+    const blogs = [
+        {title: 'Yoshi finds eggs', snippet: 'Lorem ipsum dolor sit amet consectetur'},
+        {title: 'Mario finds stars', snippet: 'Lorem ipsum dolor sit amet consectetur'},
+        {title: 'How to defeat bowser', snippet: 'Lorem ipsum dolor sit amet consectetur'},
+      ];
+    //   9. add blogs to the object
+  res.render('about', {title: "About", blogs: blogs})
 });
 
-// 11. remove the redirect
-// 12. add a get method for the create.ejs file
-// 13. create the create.ejs file
 app.get('/blogs/create' , (req, res) => {
-    res.render('create');
+    res.render('create', {title: "Create a new Blog"});
 })
 
 
 app.use((req, res) => {
-    // 10...
-    res.status(404).render('404')
-
+    res.status(404).render('404',  {title: "404"})
 })

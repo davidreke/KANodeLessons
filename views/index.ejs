@@ -5,12 +5,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Node.JS Lesson</title>
+    <!-- 5. put the title EJS down below -->
+    <title>Node.JS Lesson | <%= title %></title>
 </head>
 
 <body>
+    <!-- 1. add the below  ejs tag -->
+    <!-- it will run as JS in the server -->
+    <% const name = 'mario' %>
     <nav>
         <div class="site-title">
+            <!-- 2. add the below paragraph then run local host 3000. The percentage sign is important -->
+            <!-- <p><%= name %></p> -->
+            <!-- 3. remove the paragraph tag -->
+            <!-- 4 is on app.js -->
             <a href="/">Blog Site</a>
             <p>Courtesy of Net Ninja</p>
         </div>
