@@ -24,10 +24,8 @@ const server = http.createServer((req, res) => {
             // 6... we only need to use write if we are doing multiple things, but if we aren't doing multiple things, we can put the data in inside of end
         }
     }
-
     )
 });
-
 
 
 server.listen(3000, 'localhost', () => {
