@@ -1,0 +1,49 @@
+<!-- 4 paste this html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 5. put the title EJS down below -->
+    <title>Node.JS Lesson | <%= title %></title>
+</head>
+
+<body>
+    <!-- 1. add the below  ejs tag -->
+    <!-- it will run as JS in the server -->
+    <% const name = 'mario' %>
+    <nav>
+        <div class="site-title">
+            <!-- 2. add the below paragraph then run local host 3000. The percentage sign is important -->
+            <!-- <p><%= name %></p> -->
+            <!-- 3. remove the paragraph tag -->
+            <!-- 4 is on app.js -->
+            <a href="/">Blog Site</a>
+            <p>Courtesy of Net Ninja</p>
+        </div>
+        <ul>
+            <li><a href="/">Blogs</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/blogs/create">New Blog</a></li>
+        </ul>
+    </nav>
+    <div class="blogs content">
+        <!-- 10 add the below to display the blogs -->
+        <!-- maybe show this in regular javascript first? -->
+        <h2>All Blogs</h2>
+        <% if (blogs.length > 0) { %>
+            <% blogs.forEach(blog => { %>
+                <h3 class="title"><%= blog.title %></h3>
+                <p class="snippet"><%= blog.snippet %></p>
+            <% }) %>
+
+        <% } else {  %>
+        <!-- 11. add else for no posts -->
+            <p>there are no blogs to display</p>
+        <% } %>
+        <!-- 12 In the video he says "that's pretty simple right?" LOL -->
+    </div>
+</body>
+
+</html>
