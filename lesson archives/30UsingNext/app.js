@@ -1,26 +1,28 @@
 const express = require('express');
 const app = express();
-const morgan = require('morgan')
 
 app.set('view engine', 'ejs');
 
-// 1? Creat style.css
-// 1.5 add a link to the header
+
 
 app.listen(3000);
 
-// 2. Middleware and static files
-// express.static allows us to access static files from a folder
-app.use(express.static('public'));
-app.use(morgan('dev'));
-// 3 create a public folder and move style.css to it
-// load localhost and load localhost300/style.css
-// 4. remove style from the header and add it to style.css
+// 1. add next to the argumetns, and end of funciton
+app.use((req, res, next) => {
+  console.log('new request made')
+  console.log('host: ', req.hostname)
+  console.log('path: ', req.path)
+  console.log('method: ', req.method)
+  next();
+})
 
-
-
-
-
+// 2. Lets add more middleware
+app.use((req, res, next) => {
+  console.log('new request made')
+ console.log('second middleware')
+  next();
+})
+// exmaple (don't code along, move this below the home page and run again)
 
 app.get('/', (req, res) =>{
 
@@ -55,7 +57,7 @@ app.get('/blogs/create' , (req, res) => {
     res.render('create', {title: "Create a new Blog"});
 })
 
-
+// 1.5 remember that res.status is middleware that happens before the render.
 app.use((req, res) => {
     res.status(404).render('404',  {title: "404"})
 })

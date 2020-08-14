@@ -1,0 +1,4 @@
+1. Middleware is any code that run between the rquest and the response within the server
+2. The use method is typically used for Middleware
+
+3. The order of middleware is very important, it has to be after the get method.
